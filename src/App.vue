@@ -13,10 +13,10 @@
         <img src="./assets/Instagram.png"/>
         <img src="./assets/Medium.png"/>
       </p>
-    
     </el-header>
-    <el-main id="main">
-      <el-row :gutter="48">
+    <div id="main" style="width: 100%;">
+      <div class="bg_main" style="width: 100%;">
+        <el-row style="width: 100%;">
         <el-col :span="12" style="margin-left: 50px;">
           <h1 style="font-size: 64px;">DOGEVERSE</h1>
           <div style="font-size: 24px;">
@@ -65,8 +65,8 @@
       <el-row>
         <el-col>
           <div class="main_intro">
-            <p style="padding-top: 260px;font-size: 64px;">WHO ARE</p>
-            <p style="font-size: 64px;margin-top:-50px;"> DOGE FRENS?</p>
+            <p style="padding: 290px 0 0 30px;font-size: 64px;">WHO ARE</p>
+            <p style="padding-left: 30px;font-size: 64px;margin-top:-50px;"> DOGE FRENS?</p>
             <p class="main_intro_txt">
               <br>
               Doge Frens is a community drive collection of 6999 <br>
@@ -78,9 +78,9 @@ receive 1 Doge Fren NFT that provides you<br>
           </div>
         </el-col>
       </el-row>
-      <el-row>
+      <el-row style="width: 100%">
         <el-col>
-          <p style="padding-top: 260px;font-size: 64px;text-align:center;">
+          <p style="font-size: 64px;text-align:center;">
             WHY DOGEVERSE?
           </p>
         </el-col>
@@ -115,7 +115,9 @@ receive 1 Doge Fren NFT that provides you<br>
             </div>
         </el-col>
       </el-row>
-      <el-row id="roadmap" style="width: 100%;margin-top:600px">
+      </div>
+     <div id="roadmap">
+       <el-row  style="width: 100%;">
         <el-row>
           <el-col>
             <img style="width: 100%;margin-top: -60px;" src="./assets/roadmap_banner.png"/>
@@ -214,8 +216,10 @@ receive 1 Doge Fren NFT that provides you<br>
         </el-col>
       </el-row>
       </el-row>
+     </div>
+      
   
-    </el-main>
+    </div>
   </el-container>
 
 </template>
@@ -290,26 +294,30 @@ export default {
   }
   #main {
     width: 100%;
-    min-height: 5200px;
+    /* min-height: 5200px; */
+    color: #ffffff;
+  }
+  .bg_main {
+    width: 100%;
     background-image: url("./assets/BG.png");
     background-size: 100% 100%;
-    color: #ffffff;
+    min-height: 4600px;
   }
   .main_intro {
     margin-top: 200px;
-    width:100%;
+    width: 100%;
     /* height:600px; */
     background:url('./assets/main_bg.png');
     background-size:100% 100%;
   }
   .main_intro_txt {
-    width:100%;
-    height:450px;
+    width: 100%;
+    height: 450px;
     background:url('./assets/main.png') no-repeat;
     background-size:100% 100%;
     font-size: 32px;
     line-height: 60px;
-    /* padding: 30px 0 0 30px; */
+    padding-left: 30px;
   }
 
   .frame-8 {
@@ -452,6 +460,7 @@ export default {
   font-size: 36px;
 }
 #roadmap {
+  margin-top: -1700px;
   background-image: url("./assets/background.png");
   background-size: 100% 100%;
 }
@@ -479,5 +488,8 @@ export default {
   border: 3px solid #000000;
   border-radius: 5%;
   margin-top: 30px;
+  background-color: #ffffff;
+  text-align: left;
+  padding-left: 30px;
 }
 </style>
