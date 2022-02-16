@@ -68,6 +68,7 @@
             <p style="padding-top: 260px;font-size: 64px;">WHO ARE</p>
             <p style="font-size: 64px;margin-top:-50px;"> DOGE FRENS?</p>
             <p class="main_intro_txt">
+              <br>
               Doge Frens is a community drive collection of 6999 <br>
 randomly generated NFTs on the Ethereum <br>
 blockchain. Our goal is to build the biggest group of <br>
@@ -122,15 +123,15 @@ receive 1 Doge Fren NFT that provides you<br>
         </el-row>
         
         <el-row style="width: 100%;text-align:center;">
-        <el-col>
-          <p style="width: 100%;font-size:84px;font-weight: bold;">ROADMAP</p>
-          <p>
-            <img src="./assets/roadmap_dig.png"/>
-          </p>
-        </el-col>
+          <el-col :span="24">
+            <p style="width: 100%;font-size:84px;font-weight: bold;">ROADMAP</p>
+            <p style="width: 100%;">
+              <img src="./assets/roadmap_dig.png"/>
+            </p>
+          </el-col>
       </el-row>
 
-      <el-row style="text-align:center;margin-top:50px;">
+      <el-row style="width: 100%;text-align:center;margin-top:50px;">
         <el-col :span="7">
           <div style="margin-top: 600px;">
             <div class="btnCls btnCls2">COMING SOON</div>
@@ -297,17 +298,18 @@ export default {
   .main_intro {
     margin-top: 200px;
     width:100%;
-    height:600px;
-    background:url('./assets/main_bg.png') no-repeat;
+    /* height:600px; */
+    background:url('./assets/main_bg.png');
     background-size:100% 100%;
   }
   .main_intro_txt {
-    width:99%;
-    height:300px;
+    width:100%;
+    height:450px;
     background:url('./assets/main.png') no-repeat;
     background-size:100% 100%;
     font-size: 32px;
-    padding: 30px 0 0 30px;
+    line-height: 60px;
+    /* padding: 30px 0 0 30px; */
   }
 
   .frame-8 {
