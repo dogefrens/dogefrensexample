@@ -42,13 +42,13 @@
           
           
           <p style="font-weight: bolder;margin-top: 30px;">
-            Mint Price: 0.069 ETH
+            Mint Price: {{ metamaskAccount.price }} ETH
           </p>
           <p style="font-weight: bolder;">
-            647/1000 Left
+            {{ metamaskAccount.totalSupply }} / 1000 Left
           </p>
           <p style="margin-top: 50px;">
-            <el-button type="danger" @click="doMint" style="font-weight: bolder;color: #000000;font-size: 24px;">MINT</el-button>
+            <el-button type="danger" @click="doMint()" style="font-weight: bolder;color: #000000;font-size: 24px;">MINT</el-button>
             <el-button type="primary"  style="font-weight: bolder;color: #000000;font-size: 24px;margin-left: 100px;">BUY ON OS</el-button>
           </p>
           </div>
@@ -227,7 +227,7 @@ receive 1 Doge Fren NFT that provides you<br>
 <script>
 import { computed, watch } from 'vue'
 import { useStore } from 'vuex'
-import { ElMessage } from 'element-plus'
+// import { ElMessage } from 'element-plus'
 
 export default {
   name: 'App',
@@ -238,36 +238,41 @@ export default {
     const metamaskAccount = computed(() => store.state.dapp.account)
     const transactions = computed(() => store.state.dapp.transactions)
     const loading = computed(() => store.state.dapp.waiting)
+    
 
     const getMetamaskInformation = () => store.dispatch('dapp/getMetamaskInformation')
     const sendETH = () => store.dispatch('dapp/sendETH')
     const doMint = () => store.dispatch('dapp/doMint')
+    // const price = () => store.dispatch('dapp/getPrice')
+    
 
-    const showMessage = () => {
-      const { type, message, duration } = flashMessage.value
-      if (message) ElMessage({
-        showClose: true,
-        message,
-        type,
-        duration
-      })
-    }
+    // const showMessage = () => {
+    //   const { type, message, duration } = flashMessage.value
+    //   if (message) ElMessage({
+    //     showClose: true,
+    //     message,
+    //     type,
+    //     duration
+    //   })
+    // }
 
-    showMessage()
-    watch(flashMessage, showMessage)
+    // showMessage()
+    getMetamaskInformation()
+    watch(flashMessage)
 
     return {
       // state
       metamaskAccount,
       transactions,
       loading,
+      // price,
 
       // methods
       getMetamaskInformation,
       sendETH,
       doMint
     }
-  }
+  },
 }
 </script>
 <style scoped>
